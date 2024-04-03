@@ -1,5 +1,18 @@
 services:
   page-spy:
+    image: whatwewant/connect-doreamon:v1
+    ports:
+      - 0.0.0.0:${SERVICE_PAGE_SPY_PORT}:8080
+    environment:
+      UPSTREAM: http://page-spy_upstream:6752
+      SECRET_KEY: ${SERVICE_PAGE_SPY_SECRET_KEY}
+      CLIENT_ID: ${SERVICE_PAGE_SPY_DOREAMON_CLIENT_ID}
+      CLIENT_SECRET: ${SERVICE_PAGE_SPY_DOREAMON_CLIENT_SECRET}
+      REDIRECT_URI: ${SERVICE_PAGE_SPY_DOREAMON_REDIRECT_URI}
+      #
+      AUTH_IGNORE_PATHS: "^/api/v1/ws/room/join,^/page-spy/"
+
+  page-spy_upstream:
     restart: always
     image: whatwewant/page-spy:${SERVICE_PAGE_SPY_IMAGE_VERSION}
     # ports:
