@@ -10,7 +10,7 @@ services:
       CLIENT_SECRET: ${SERVICE_PAGE_SPY_DOREAMON_CLIENT_SECRET}
       REDIRECT_URI: ${SERVICE_PAGE_SPY_DOREAMON_REDIRECT_URI}
       #
-      AUTH_IGNORE_PATHS: "^/api/v1/room/,^/page-spy/"
+      AUTH_IGNORE_PATHS: "^/api/v1/room/create,^/api/v1/ws/room/join,^/page-spy/"
 
   page-spy_upstream:
     restart: always
