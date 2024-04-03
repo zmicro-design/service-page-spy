@@ -1,0 +1,13 @@
+services:
+  page-spy:
+    restart: always
+    image: whatwewant/page-spy:${SERVICE_PAGE_SPY_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_PAGE_SPY_PORT
+      USERNAME: ${SERVICE_PAGE_SPY_USERNAME}
+      PASSWORD: ${SERVICE_PAGE_SPY_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
