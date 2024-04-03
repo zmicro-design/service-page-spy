@@ -1,3 +1,3 @@
 NAME=page-spy
-VERSION=v0.0.0
+VERSION=v1.0.0
 DESCRIPTION="page-spy Service"
